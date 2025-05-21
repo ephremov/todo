@@ -1,45 +1,91 @@
-# Simple Web App
+# Todo Web App
 
-## Description
-This is a simple web application developed using Node.js, PostgreSQL and React. The application consists of a backend server and a frontend client that interact with each other to manage tasks.
+## Описание
 
-## Technology Stack
-- **Backend:**
-  - Node.js
-  - PostgreSQL
+Todo Web App — это простое веб-приложение для управления задачами (to-do), разработанное с использованием Node.js, PostgreSQL и React. Приложение состоит из бэкенда (API на Node.js + Express), фронтенда (React) и базы данных PostgreSQL. Все сервисы запускаются в контейнерах Docker.
 
-- **Frontend:**
-  - React
+## Технологии
 
-- **Containerization:**
-  - Docker
+- **Бэкенд:** Node.js, Express
+- **База данных:** PostgreSQL
+- **Фронтенд:** React
+- **Контейнеризация:** Docker, Docker Compose
 
-## Installation
+## Быстрый старт (через Docker)
 
-### Backend
-1. Navigate to the `backend` directory.
-2. Install dependencies:
+1. Клонируйте репозиторий:
+   ```sh
+   git clone <ссылка_на_репозиторий>
+   cd todo
    ```
+
+2. Запустите все сервисы:
+   ```sh
+   docker compose up --build
+   ```
+
+3. Приложение будет доступно:
+   - Фронтенд: [http://localhost:3000](http://localhost:3000)
+   - Бэкенд API: [http://localhost:4000/api](http://localhost:4000/api)
+   - PostgreSQL: порт 5432
+
+## Локальный запуск без Docker
+
+### Бэкенд
+
+1. Перейдите в папку сервера:
+   ```sh
+   cd server
+   ```
+2. Установите зависимости:
+   ```sh
    npm install
    ```
-3. Start the server:
-   ```
+3. Создайте файл `.env` при необходимости (см. пример в `.env.example`).
+4. Запустите сервер:
+   ```sh
    npm start
    ```
 
-### Frontend
-1. Navigate to the `frontend` directory.
-2. Install dependencies:
+### Фронтенд
+
+1. Перейдите в папку клиента:
+   ```sh
+   cd client
    ```
+2. Установите зависимости:
+   ```sh
    npm install
    ```
-3. Start the client application:
-   ```
+3. Запустите приложение:
+   ```sh
    npm start
    ```
+4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-## Docker
-To build Docker images, use the `Dockerfile` in the corresponding directories (`backend` and `frontend`).
+## Структура проекта
 
-## License
-This project is licensed under the MIT License.
+```
+todo/
+├── client/      # React-приложение (фронтенд)
+├── server/      # Node.js + Express (бэкенд)
+├── docker-compose.yml
+├── README.md
+└── ...
+```
+
+## Переменные окружения
+
+- Файл `.env` для сервера (пример):
+  ```
+  PORT=4000
+  DB_HOST=postgres
+  DB_PORT=5432
+  DB_USER=postgres
+  DB_PASSWORD=postgres
+  DB_NAME=todo_db
+  ```
+
+## Лицензия
+
+MIT License
