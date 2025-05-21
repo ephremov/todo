@@ -1,5 +1,7 @@
 # Todo Web App
 
+![Скриншот](https://drive.google.com/uc?export=view&id=1BFJBZvmE7Faviw4Hn7x_ysLQ3GlhRUzX)
+
 ## Описание
 
 Todo Web App — это простое веб-приложение для управления задачами (to-do), разработанное с использованием Node.js, PostgreSQL и React. Приложение состоит из бэкенда (API на Node.js + Express), фронтенда (React) и базы данных PostgreSQL. Все сервисы запускаются в контейнерах Docker.
